@@ -8,11 +8,11 @@
   },
   "games": [
     {
-      "id": "com.bearzeno.samplepuzzle",
-      "name": "Sample Puzzle",
-      "genre": "Puzzle",
-      "tagline": "Replace this with your game's one-line pitch.",
-      "icon": "",
+      "id": "com.softbear.idlefoodstreet",
+      "name": "Food Street: Idle Tycoon",
+      "genre": "Idle Tycoon",
+      "tagline": "🍜 Xây dựng khu phố ẩm thực của riêng bạn trong Idle Food Street!\n\nBắt đầu với một quầy hàng nhỏ, phục vụ khách hàng và kiếm tiền để mở rộng",
+      "icon": "assets/games/com.softbear.idlefoodstreet-mwf61mmd.png",
       "featured": true
     },
     {
