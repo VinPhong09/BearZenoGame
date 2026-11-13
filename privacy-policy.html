@@ -3,65 +3,168 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy – BearZeno Games</title>
+  <title>Privacy Policy – SoftBear Games</title>
+  <meta name="description" content="How SoftBear games handle game progress, account information, and advertising data." />
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .policy { max-width: 760px; padding: 48px 0 72px; }
-    .policy h2 { font-size: 1.5rem; margin-top: 1.6em; }
+    .policy-hero { padding: 48px 0 8px; }
+    .policy-hero .lead { margin: 0; }
+    .policy-layout { display: grid; grid-template-columns: 220px 1fr; gap: 48px; padding: 32px 0 80px; align-items: start; }
+    .toc { position: sticky; top: 88px; font-size: .92rem; }
+    .toc strong { display: block; text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; color: var(--muted); margin-bottom: 8px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+    .toc a { text-decoration: none; color: var(--muted); font-weight: 700; }
+    .toc a:hover { color: var(--accent); }
+    .toc .sub { padding-left: 12px; }
+    .policy { max-width: 760px; min-width: 0; }
+    .policy section { scroll-margin-top: 84px; }
+    .policy h2 { font-size: 1.6rem; margin-top: 1.8em; }
+    .policy h3 { margin-top: 1.4em; }
+    .policy section:first-child h2 { margin-top: 0; }
     .policy p, .policy li { color: var(--muted); }
+    .policy strong { color: var(--text); }
+    .policy li { margin-bottom: 8px; }
+    .policy a { color: var(--accent); word-break: break-word; }
+    .updated { color: var(--muted); font-size: .92rem; }
+    .game-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 4px 24px 12px; margin-top: 16px; }
+    .game-box h3 { margin-top: 1em; }
+    .meta { font-size: .9rem; }
+    .meta code { background: var(--bg-alt); padding: 2px 6px; border-radius: 6px; }
+    @media (max-width: 820px) {
+      .policy-layout { grid-template-columns: 1fr; gap: 24px; }
+      .toc { position: static; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px; }
+    }
   </style>
 </head>
 <body>
   <header class="nav">
     <div class="wrap nav-inner">
-      <a href="index.html" class="brand"><img src="assets/logo.svg" alt="" width="36" height="36" /><span>BearZeno Games</span></a>
-      <nav class="nav-links"><a href="index.html#games">Games</a></nav>
+      <a href="index.html" class="brand"><img src="assets/logo.svg" alt="" width="36" height="36" /><span>SoftBear</span></a>
+      <nav class="nav-links"><a href="index.html#games">Games</a><a href="#contact">Contact</a></nav>
     </div>
   </header>
 
-  <main class="wrap policy">
+  <div class="wrap policy-hero">
+    <p class="eyebrow">Your game. Your information.</p>
     <h1>Privacy Policy</h1>
-    <p><em>Last updated: November 13, 2026</em></p>
+    <p class="lead">How SoftBear games handle game progress, account information, and advertising data.</p>
+    <p class="updated">Last updated: November 13, 2026</p>
+  </div>
 
-    <p>This policy applies to all games published by BearZeno Games on Google Play ("the Apps"). <strong>Review and adapt this template to match what your games actually collect before publishing it.</strong></p>
+  <div class="wrap policy-layout">
+    <nav class="toc" aria-label="On this page">
+      <strong>On this page</strong>
+      <ol>
+        <li><a href="#about">About this policy</a></li>
+        <li><a href="#information">Information we handle</a></li>
+        <li><a href="#use">Why information is used</a></li>
+        <li><a href="#providers">Service providers</a></li>
+        <li><a href="#retention">Storage &amp; retention</a></li>
+        <li><a href="#delete-data">Delete account &amp; data</a></li>
+        <li><a href="#choices">Your choices</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#website">Security &amp; this website</a></li>
+        <li><a href="#games">Game-specific details</a></li>
+        <li class="sub"><a href="#food-street">Food Street: Idle Tycoon</a></li>
+        <li><a href="#contact">Changes &amp; contact</a></li>
+      </ol>
+    </nav>
 
-    <h2>Information we collect</h2>
-    <p>The Apps do not ask you for personal information such as your name or address. Some data may be collected automatically by third-party services used in the Apps:</p>
-    <ul>
-      <li>Device information (model, OS version, language)</li>
-      <li>Advertising ID</li>
-      <li>Approximate location derived from IP address</li>
-      <li>Gameplay and crash diagnostics</li>
-    </ul>
+    <main class="policy">
+      <section id="about">
+        <h2>About this policy</h2>
+        <p>SoftBear ("we", "us") publishes mobile games on Google Play. This policy applies to all of our games and to this website. It explains what information is handled when you play our games, why, and the choices you have.</p>
+        <p>Some details differ between games — for example, whether a game offers cloud saves or sign-in. Those differences are listed under <a href="#games">Game-specific details</a>.</p>
+        <p>For privacy questions, support, or data requests, contact <a href="mailto:softbears.game@gmail.com">softbears.game@gmail.com</a>.</p>
+      </section>
 
-    <h2>Third-party services</h2>
-    <p>The Apps may use the following services, each with its own privacy policy:</p>
-    <ul>
-      <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></li>
-      <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob</a></li>
-      <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Analytics / Crashlytics</a></li>
-    </ul>
+      <section id="information">
+        <h2>Information handled by our games</h2>
+        <ul>
+          <li><strong>Game progress and settings:</strong> levels, unlocked content, in-game currency, missions, rewards, and preferences are stored on your device. In games that offer cloud services, a copy of your save and related metadata can be stored using Unity Cloud Save.</li>
+          <li><strong>Player and account information:</strong> in games that use Unity Authentication, a player identifier is assigned, including for guest sessions. Sign-in providers, where enabled, process the identifiers and authentication information needed to link or restore your game. Cloud-save metadata can include a player ID, save timestamps and revision, a device description, and progress summaries. Do not send us your account password or sign-in codes.</li>
+          <li><strong>Advertising and technical information:</strong> our games use Google AdMob to show ads, such as rewarded ads. Its SDK may process IP addresses, approximate location inferred from IP, advertising and other device identifiers, ad interactions, and diagnostic information. These are used for advertising, measurement, service operation, and fraud prevention, subject to applicable privacy choices.</li>
+          <li><strong>Support messages:</strong> if you email us, we receive your email address and any information you choose to include so we can respond to your request.</li>
+        </ul>
+      </section>
 
-    <h2>Advertising</h2>
-    <p>The Apps show ads served by Google AdMob. AdMob may use your Advertising ID to show personalized ads. You can reset your Advertising ID or opt out of personalized ads in your device settings (Settings → Google → Ads). Users in the EEA/UK are asked for consent before personalized ads are shown.</p>
+      <section id="use">
+        <h2>Why information is used</h2>
+        <p>Information is used to run our games, save and restore progress, authenticate players, provide and measure ads, apply privacy choices, maintain security, troubleshoot problems, and respond to support and privacy requests.</p>
+      </section>
 
-    <h2>Children</h2>
-    <p>The Apps are not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us data, contact us and we will delete it.</p>
+      <section id="providers">
+        <h2>Service providers</h2>
+        <p>Google AdMob provides advertising. Unity Gaming Services provides authentication and cloud-save functionality in the games that use it. Available sign-in providers handle their sign-in processes under their own policies. These services may process information in countries other than your own.</p>
+        <ul>
+          <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+          <li>Google advertising information: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></li>
+          <li>Unity Privacy Policy: <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">unity.com/legal/privacy-policy</a></li>
+        </ul>
+        <p>We may also disclose information where required by applicable law or necessary to address security or fraud, subject to applicable requirements.</p>
+      </section>
 
-    <h2>Data retention and deletion</h2>
-    <p>We do not store personal data on our own servers. To request deletion of data held by the third-party services above, contact us at the email below.</p>
+      <section id="retention">
+        <h2>Storage, retention, and deletion</h2>
+        <p>Local game data is retained on your device until you remove it using Android app-storage controls or other applicable device controls. Removing local game data does not by itself delete an existing cloud save.</p>
+        <p>Cloud game data is retained to provide account and save-restoration functionality. You can request deletion through a game's account controls, where available, or by contacting us as described below. Data processed by service providers, including their operational records or backups, is subject to their retention practices and applicable legal requirements. This policy does not promise an immediate purge of every provider record.</p>
+      </section>
 
-    <h2>Changes</h2>
-    <p>We may update this policy from time to time. Changes are posted on this page with a new "Last updated" date.</p>
+      <section id="delete-data">
+        <h2>Request account or data deletion</h2>
+        <p>Games with cloud-account features include an in-game option to delete your game account — see <a href="#games">Game-specific details</a>.</p>
+        <p>You can also request deletion without opening or reinstalling a game. Email <a href="mailto:softbears.game@gmail.com">softbears.game@gmail.com</a> with the subject <strong>[Game name] — Data deletion</strong>.</p>
+        <p>Include your player ID, if available, and enough information to identify the game account. Explain whether you want the account and cloud progress deleted or have another data request. Never send passwords or authentication codes. We may request information necessary to verify ownership before acting. We will explain any information that must be retained for applicable legal or security reasons.</p>
+        <p>Deleting a game account does not automatically delete records that Google or other providers control independently, and it does not delete your separate Google or other sign-in-provider account. Their policies explain their own request procedures.</p>
+      </section>
 
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
-  </main>
+      <section id="choices">
+        <h2>Privacy choices</h2>
+        <p>Where available, a game's settings let you review advertising consent choices. Availability depends on your region and the advertising consent system. Android may also provide advertising-privacy controls, such as resetting or deleting your advertising ID. If you choose not to watch a rewarded ad, its associated reward is not earned.</p>
+      </section>
+
+      <section id="children">
+        <h2>Children</h2>
+        <p>Parents or guardians who have questions about a child's information or believe a child has provided personal information can contact <a href="mailto:softbears.game@gmail.com">softbears.game@gmail.com</a>. Please identify the game and provide enough information for us to investigate. We review these requests and address information that must be removed under applicable requirements. Do not send unnecessary information about a child in a support message.</p>
+      </section>
+
+      <section id="website">
+        <h2>Security and this website</h2>
+        <p>Our games use network services for authentication, cloud saves, and advertising. No method of storage or transmission provides an absolute security guarantee.</p>
+        <p>This website does not include our own analytics scripts, advertising, contact forms, or player sign-in features. It is hosted by GitHub Pages, which may process technical request information, including visitor IP addresses, to provide and secure its hosting service — see the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>. Web fonts are loaded from Google Fonts, which receives your IP address and browser information when the page loads — see the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+      </section>
+
+      <section id="games">
+        <h2>Game-specific details</h2>
+        <p>The sections above apply to every game. The details below describe features specific to individual games.</p>
+
+        <div class="game-box" id="food-street">
+          <h3>Food Street: Idle Tycoon</h3>
+          <p class="meta">Also known as Idle Food Street · Android package <code>com.softbear.idlefoodstreet</code></p>
+          <ul>
+            <li><strong>Game data:</strong> unlocked streets and stalls, levels, in-game currency, missions, rewards, staff assignments, and preferences are stored on your device. When cloud services are available, a copy of your save is stored using Unity Cloud Save.</li>
+            <li><strong>Account:</strong> Unity Authentication assigns a player identifier, including for guest sessions. Sign-in providers, where enabled, can be used to link or restore your game.</li>
+            <li><strong>Ads:</strong> Google AdMob rewarded ads.</li>
+            <li><strong>Delete account in the game:</strong> where cloud-account features are available, select <strong>DELETE ACCOUNT</strong> in the game's account screen to delete the current game account and its cloud save. The game can then continue as a guest while retaining this device's local progress. To remove local progress too, use Android's app-storage controls.</li>
+            <li><strong>Delete by email:</strong> use the subject <strong>Food Street: Idle Tycoon — Data deletion</strong>.</li>
+            <li><strong>Ad privacy:</strong> where available, <strong>SETTINGS → AD PRIVACY</strong> lets you review advertising consent choices.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Changes and contact</h2>
+        <p>We will update this page and its update date when the policy changes. Contact <a href="mailto:softbears.game@gmail.com">softbears.game@gmail.com</a> for privacy questions, support, and requests about your information.</p>
+      </section>
+    </main>
+  </div>
 
   <footer class="footer">
-    <div class="wrap footer-inner"><p>© 2026 BearZeno Games</p><nav><a href="index.html">Home</a></nav></div>
+    <div class="wrap footer-inner"><p>© 2026 SoftBear</p><nav><a href="index.html">Home</a><a href="app-ads.txt">app-ads.txt</a></nav></div>
   </footer>
 </body>
 </html>
