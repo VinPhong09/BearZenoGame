@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Game Admin</title>
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="../" class="brand"><img src="../assets/logo.svg" alt="" width="36" height="36" /><span>Admin</span></a>
+      <div class="bar">
+        <span id="status" class="status"></span>
+        <button id="publish" class="btn btn-primary" disabled>Publish</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap admin">
+    <div id="notice" class="notice" hidden></div>
+
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="games" aria-selected="true">Games</button>
+      <button role="tab" data-tab="studio" aria-selected="false">Studio</button>
+      <button role="tab" data-tab="ads" aria-selected="false">app-ads.txt</button>
+      <button role="tab" data-tab="settings" aria-selected="false">Kết nối GitHub</button>
+    </nav>
+
+    <section data-panel="games">
+      <div class="panel-head">
+        <h2>Games <span id="games-count" class="muted"></span></h2>
+        <button id="add-game" class="btn btn-primary">+ Thêm game</button>
+      </div>
+      <ul id="game-list" class="game-list"></ul>
+    </section>
+
+    <section data-panel="studio" hidden>
+      <h2>Thông tin studio</h2>
+      <form id="studio-form" class="form">
+        <label>Tên studio<input name="name" required /></label>
+        <label>Tagline (tiêu đề lớn đầu trang)<input name="tagline" /></label>
+        <label>Giới thiệu<textarea name="intro" rows="3"></textarea></label>
+        <label>Link trang developer trên Google Play<input name="playDeveloperUrl" type="url" placeholder="https://play.google.com/store/apps/dev?id=..." /></label>
+        <label>Email liên hệ<input name="email" type="email" /></label>
+      </form>
+    </section>
+
+    <section data-panel="ads" hidden>
+      <h2>app-ads.txt</h2>
+      <p class="muted">Mỗi dòng một mạng quảng cáo. Với AdMob: <code>google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0</code></p>
+      <textarea id="ads-text" class="code" rows="12" spellcheck="false"></textarea>
+      <ul id="ads-check" class="checks"></ul>
+    </section>
+
+    <section data-panel="settings" hidden>
+      <h2>Kết nối GitHub</h2>
+      <form id="settings-form" class="form">
+        <div class="row-2">
+          <label>Owner<input name="owner" required /></label>
+          <label>Repo<input name="repo" required /></label>
+        </div>
+        <label>Branch<input name="branch" required /></label>
+        <label>Personal access token<input name="token" type="password" autocomplete="off" required /></label>
+        <label class="check"><input name="remember" type="checkbox" /> Ghi nhớ token trên trình duyệt này</label>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Kết nối</button>
+          <button class="btn btn-ghost" type="button" id="disconnect">Ngắt kết nối</button>
+        </div>
+      </form>
+      <details class="help" open>
+        <summary>Cách tạo token</summary>
+        <ol>
+          <li>Mở <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Fine-grained tokens → Generate new token</a>.</li>
+          <li><strong>Repository access:</strong> Only select repositories → chọn repo của site này.</li>
+          <li><strong>Permissions → Repository permissions → Contents:</strong> Read and write.</li>
+          <li>Tạo token, copy và dán vào ô trên. Không chia sẻ token cho ai.</li>
+        </ol>
+        <p class="muted">Token chỉ được gửi tới api.github.com. Nếu không tick "Ghi nhớ", token sẽ mất khi đóng tab.</p>
+      </details>
+    </section>
+  </main>
+
+  <dialog id="game-dialog">
+    <form id="game-form" class="form">
+      <h2 id="dialog-title">Thêm game</h2>
+      <label>Package name hoặc link Google Play
+        <input name="id" required placeholder="com.studio.game hoặc https://play.google.com/store/apps/details?id=..." />
+      </label>
+      <label>Tên game<input name="name" required /></label>
+      <div class="row-2">
+        <label>Thể loại<input name="genre" list="genres" placeholder="Puzzle, Casual, Action..." /></label>
+        <label class="check featured-check"><input name="featured" type="checkbox" /> Game nổi bật</label>
+      </div>
+      <datalist id="genres"></datalist>
+      <label>Mô tả ngắn<textarea name="tagline" rows="2" maxlength="140"></textarea></label>
+      <div class="icon-field">
+        <div id="icon-preview" class="ic ic-lg"></div>
+        <label>Icon (tự cắt vuông 512×512)<input name="icon" type="file" accept="image/*" /></label>
+      </div>
+      <p id="form-error" class="error" hidden></p>
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Lưu</button>
+        <button class="btn btn-ghost" type="button" id="cancel-dialog">Huỷ</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="admin.js"></script>
+</body>
+</html>

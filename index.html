@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BearZeno Games</title>
+  <meta name="description" content="Casual, puzzle and arcade games for Android by BearZeno Games. Download free on Google Play." />
+  <meta property="og:title" content="BearZeno Games" />
+  <meta property="og:description" content="Casual, puzzle and arcade games for Android. Download free on Google Play." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#" class="brand">
+        <img src="assets/logo.svg" alt="" width="36" height="36" />
+        <span data-studio="name">BearZeno Games</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Indie games for Android</p>
+          <h1 data-studio="tagline">Small games, big fun.</h1>
+          <p class="lead" data-studio="intro"></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#games">Browse games</a>
+            <a class="btn btn-ghost" data-studio-href="playDeveloperUrl" target="_blank" rel="noopener">All on Google Play</a>
+          </div>
+          <p class="stat"><strong id="game-count">0</strong> games available</p>
+        </div>
+        <div class="hero-feature" id="hero-feature"></div>
+      </div>
+    </section>
+
+    <section id="games" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Our games</h2>
+          <div class="filters" id="filters" role="tablist" aria-label="Filter by genre"></div>
+        </div>
+        <div class="grid" id="game-grid"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt">
+      <div class="wrap about">
+        <div>
+          <h2>About the studio</h2>
+          <p>We build lightweight games that load fast, play well on any phone and respect your time. Every game is free to download on Google Play.</p>
+        </div>
+        <ul class="features">
+          <li><span>⚡</span><div><strong>Quick to play</strong><p>Short sessions, instant fun.</p></div></li>
+          <li><span>📱</span><div><strong>Runs everywhere</strong><p>Optimized for low-end and high-end devices.</p></div></li>
+          <li><span>🔄</span><div><strong>Always improving</strong><p>Regular updates based on player feedback.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap contact">
+        <h2>Get in touch</h2>
+        <p>Feedback, bug reports or business inquiries — we read everything.</p>
+        <a class="btn btn-primary" data-studio-mail>Email us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> <span data-studio="name">BearZeno Games</span></p>
+      <nav>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="app-ads.txt">app-ads.txt</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

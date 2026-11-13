@@ -1,0 +1,33 @@
+{
+  "studio": {
+    "name": "BearZeno Games",
+    "tagline": "Small games, big fun.",
+    "intro": "We are an indie studio making casual, puzzle and arcade games for Android. Pick one up, play a round, and stay as long as you like.",
+    "playDeveloperUrl": "https://play.google.com/store/apps/developer?id=BearZeno+Games",
+    "email": "contact@example.com"
+  },
+  "games": [
+    {
+      "id": "com.bearzeno.samplepuzzle",
+      "name": "Sample Puzzle",
+      "genre": "Puzzle",
+      "tagline": "Replace this with your game's one-line pitch.",
+      "icon": "",
+      "featured": true
+    },
+    {
+      "id": "com.bearzeno.samplerunner",
+      "name": "Sample Runner",
+      "genre": "Arcade",
+      "tagline": "Dash, dodge and collect — replace with your own text.",
+      "icon": ""
+    },
+    {
+      "id": "com.bearzeno.samplecasual",
+      "name": "Sample Casual",
+      "genre": "Casual",
+      "tagline": "A relaxing tap game. Replace with your own text.",
+      "icon": ""
+    }
+  ]
+}
