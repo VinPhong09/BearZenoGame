@@ -12,22 +12,15 @@
       "name": "Food Street: Idle Tycoon",
       "genre": "Idle Tycoon",
       "tagline": "🍜 Xây dựng khu phố ẩm thực của riêng bạn trong Idle Food Street!\n\nBắt đầu với một quầy hàng nhỏ, phục vụ khách hàng và kiếm tiền để mở rộng",
-      "icon": "assets/games/com.softbear.idlefoodstreet-mwf61mmd.png",
+      "icon": "assets/games/com.softbear.idlefoodstreet-mwf61mmd.png"
+    },
+    {
+      "id": "com.BearZenoGames.RopeRescue",
+      "name": "Fin & Freedom: Rope Rescue",
+      "genre": "Puzzle",
+      "tagline": "✂️ Cut ropes, save clownfish, and keep sharks trapped in 100+ ocean puzzles!",
+      "icon": "assets/games/com.BearZenoGames.RopeRescue-mwf6c6cs.png",
       "featured": true
-    },
-    {
-      "id": "com.bearzeno.samplerunner",
-      "name": "Sample Runner",
-      "genre": "Arcade",
-      "tagline": "Dash, dodge and collect — replace with your own text.",
-      "icon": ""
-    },
-    {
-      "id": "com.bearzeno.samplecasual",
-      "name": "Sample Casual",
-      "genre": "Casual",
-      "tagline": "A relaxing tap game. Replace with your own text.",
-      "icon": ""
     }
   ]
 }
