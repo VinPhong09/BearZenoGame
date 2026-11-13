@@ -138,7 +138,7 @@
   }
   function iconSrc(path) {
     if (!path) return null;
-    return state.pendingIcons.get(path) || state.iconPreview.get(path) || `../${path}`;
+    return state.pendingIcons.get(path) || state.iconPreview.get(path) || `/${path}`;
   }
   function iconHtml(g) {
     const src = iconSrc(g.icon);
@@ -379,8 +379,8 @@
 
   async function loadLocal() {
     const [json, ads] = await Promise.all([
-      fetch("../games.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
-      fetch("../app-ads.txt", { cache: "no-cache" }).then((r) => (r.ok ? r.text() : "")).catch(() => ""),
+      fetch("/games.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+      fetch("/app-ads.txt", { cache: "no-cache" }).then((r) => (r.ok ? r.text() : "")).catch(() => ""),
     ]);
     setData(json, ads);
   }
@@ -478,7 +478,7 @@
         state.sha.ads = r.content.sha;
         state.dirty.delete("ads");
       }
-      notify("✓ Đã publish! GitHub Pages thường mất 1–2 phút để cập nhật trang.", "ok");
+      notify("✓ Đã publish! Vercel sẽ tự deploy lại, thường mất khoảng 1 phút để trang cập nhật.", "ok");
     } catch (e) {
       const msg = e.status === 409 || e.status === 422
         ? "File trên GitHub đã bị thay đổi ở nơi khác. Hãy kết nối lại để tải bản mới nhất rồi sửa lại."

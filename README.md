@@ -4,8 +4,8 @@ Static site (HTML/CSS/JS, no build) listing our Google Play games, plus `app-ads
 
 ## Trang admin – thêm / sửa game
 
-Mở `https://<site>/admin/`. Trang admin đọc và ghi trực tiếp vào repo GitHub qua GitHub API,
-sau đó GitHub Pages tự deploy lại (1–2 phút). Không cần server.
+Mở <https://www.bearzenogames.com/admin/>. Trang admin đọc và ghi trực tiếp vào repo GitHub qua GitHub API,
+sau đó Vercel tự deploy lại (~1 phút). Không cần server.
 
 1. Tạo **fine-grained token**: <https://github.com/settings/personal-access-tokens/new>
    - Repository access: *Only select repositories* → chọn repo này
@@ -35,24 +35,14 @@ Nút lọc theo thể loại tự xuất hiện khi có từ 2 `genre` khác nha
 
 ## app-ads.txt
 
-1. Mở `app-ads.txt` (hoặc tab *app-ads.txt* trong admin), thay `pub-0000000000000000` bằng Publisher ID AdMob của bạn (AdMob → Settings → Account information). Nếu dùng thêm mạng quảng cáo khác (mediation), thêm dòng của từng mạng vào file.
-2. Trong **Google Play Console**, mỗi app → *Store presence → Store settings → Contact details → Website* phải là **đúng domain gốc** của site này (ví dụ `https://bearzeno.com` hoặc `https://vinphong09.github.io`).
-3. File phải truy cập được tại `https://<domain>/app-ads.txt` — **ở gốc domain, không nằm trong thư mục con**.
-4. AdMob → Apps → *app-ads.txt* → bấm *Check for updates*. Việc crawl có thể mất tới 24h.
+Site deploy trên **Vercel** với domain `bearzenogames.com` (`bearzenogames.com` tự chuyển sang `www`).
+Link xác minh: <https://www.bearzenogames.com/app-ads.txt>
 
-### Lưu ý khi dùng GitHub Pages
+1. Sửa `app-ads.txt` (hoặc tab *app-ads.txt* trong admin). Nếu dùng thêm mạng quảng cáo khác (mediation), thêm dòng của từng mạng vào file.
+2. Trong **Google Play Console**, mỗi app → *Store presence → Store settings → Contact details → Website* = `https://www.bearzenogames.com`.
+3. AdMob → Apps → *app-ads.txt* → bấm *Check for updates*. Việc crawl có thể mất tới 24h.
 
-AdMob chỉ đọc `app-ads.txt` ở **gốc domain**. Repo `BearZenoGame` mặc định sẽ được deploy ở
-`https://vinphong09.github.io/BearZenoGame/` → file nằm ở `/BearZenoGame/app-ads.txt`, **AdMob sẽ không thấy**.
-
-Chọn một trong hai cách:
-
-- **Custom domain (khuyên dùng):** mua domain (vd `bearzeno.com`), tạo file `CNAME` chứa tên domain, trỏ DNS về GitHub Pages. Khi đó file nằm ở `https://bearzeno.com/app-ads.txt`.
-- **Repo user site:** đổi tên repo thành `VinPhong09.github.io`, site sẽ ở `https://vinphong09.github.io/` và file ở `https://vinphong09.github.io/app-ads.txt`.
-
-### Bật GitHub Pages
-
-Repo → *Settings → Pages* → Source: *Deploy from a branch* → Branch `main`, folder `/ (root)`.
+AdMob chỉ đọc `app-ads.txt` ở **gốc domain**, không đọc trong thư mục con.
 
 ## Chạy thử local
 
