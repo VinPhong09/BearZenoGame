@@ -7,6 +7,9 @@
   const CFG_KEY = "bz-admin-config";
   const TOKEN_KEY = "bz-admin-token";
   const ADMOB_TAG = "f08c47fec0942fa0";
+  const TOKEN_PERMISSION_HELP =
+    'token chưa có quyền ghi vào repo. Mở <a href="https://github.com/settings/personal-access-tokens" target="_blank" rel="noopener">GitHub → Fine-grained tokens</a>, ' +
+    "chọn token → <strong>Edit</strong>: Repository access phải gồm repo này, và Repository permissions → <strong>Contents: Read and write</strong> → Update.";
 
   const state = {
     data: { studio: {}, games: [] },
@@ -402,14 +405,20 @@
     try {
       const repo = await gh("");
       if (!repo.permissions || !repo.permissions.push)
-        throw new Error("Token không có quyền ghi (Contents: Read and write) vào repo này.");
+        throw Object.assign(new Error("no push"), { status: 403 });
+      // On a public repo any token can read, and `permissions` reflects the account, not the token.
+      // Creating an unreferenced git blob is a harmless way to prove the token itself can write.
+      await gh("/git/blobs", { method: "POST", body: JSON.stringify({ content: "", encoding: "utf-8" }) });
       state.connected = true;
       await loadRemote();
       notify(`Đã kết nối <strong>${esc(cfg.owner)}/${esc(cfg.repo)}</strong> (${esc(cfg.branch)}). Dữ liệu đang được tải từ GitHub.`, "ok");
     } catch (e) {
       state.connected = false;
-      const msg = e.status === 401 ? "Token không hợp lệ hoặc đã hết hạn." : e.status === 404 ? "Không tìm thấy repo, hoặc token không có quyền truy cập repo này." : e.message;
-      notify(`Không kết nối được GitHub: ${esc(msg)}`, "err");
+      const msg = e.status === 401 ? esc("Token không hợp lệ hoặc đã hết hạn.")
+        : e.status === 403 ? TOKEN_PERMISSION_HELP
+        : e.status === 404 ? esc("Không tìm thấy repo, hoặc token không có quyền truy cập repo này.")
+        : esc(e.message);
+      notify(`Không kết nối được GitHub: ${msg}`, "err");
       throw e;
     } finally {
       state.busy = false;
@@ -481,9 +490,10 @@
       notify("✓ Đã publish! Vercel sẽ tự deploy lại, thường mất khoảng 1 phút để trang cập nhật.", "ok");
     } catch (e) {
       const msg = e.status === 409 || e.status === 422
-        ? "File trên GitHub đã bị thay đổi ở nơi khác. Hãy kết nối lại để tải bản mới nhất rồi sửa lại."
-        : e.message;
-      notify(`Publish thất bại: ${esc(msg)}`, "err");
+        ? esc("File trên GitHub đã bị thay đổi ở nơi khác. Hãy kết nối lại để tải bản mới nhất rồi sửa lại.")
+        : e.status === 403 ? `${TOKEN_PERMISSION_HELP} Sửa xong quay lại bấm <strong>Publish</strong> lần nữa — không cần tải lại trang.`
+        : esc(e.message);
+      notify(`Publish thất bại: ${msg}`, "err");
     } finally {
       state.busy = false;
       renderStatus();
